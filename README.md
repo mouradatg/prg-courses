@@ -4,5 +4,5 @@ You will find here all the programs that I realized and develop as part of my st
 
 ## Setting it up
 
-<pre><code> https://github.com/mouradatg/prg-courses.git </code>
+<pre><code>https://github.com/mouradatg/prg-courses.git</code>
 <code>cd prg-courses.git</code></pre>
