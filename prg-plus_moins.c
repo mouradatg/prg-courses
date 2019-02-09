@@ -4,18 +4,44 @@
 
 int main(int argc, char *argv[])
 {
-    int nombre_mystere = 0, nombre_utilisateur = 0, compteur_coups = 0, continuer_partie = 1;
+    int nombre_mystere = 0, nombre_utilisateur = 0, compteur_coups = 0, continuer_partie = 1, choix_utilisateur = 0;
+    int nombre_mystere_mod2 = 0;
     const int MAX = 100, MIN = 1;
+
+    // Menu choix du joueur
+    printf("=== MENU CHOIX JOUEUR ===\n");
+    printf("Salut toi, il est temps de choisir le nombre de joueur !\n");
+    printf("1. Je suis seul au monde j'ai pas d'amis mec !\n");
+    printf("2. On est 2 je suis là avec une amie ;)\n");
+    printf("=============================================================");
+    printf("\nTon choix : ");
+    scanf("%d", &choix_utilisateur);
+
+    if (choix_utilisateur == 1)
+    {
+        // Générateur de nombre aléatoirement
+        srand(time(NULL));
+        nombre_mystere = (rand() % (MAX - MIN + 1)) + MIN;
+    }
+    else if (choix_utilisateur = 2)
+    {
+        printf("Demande à ton ami de définir un nombre \nentre %d et %d si ce n'est pas trop demandé ! ;)\n", MIN, MAX);
+        printf("\nLe nombre :");
+        scanf("%d", &nombre_mystere);
+    }
+    else
+    {
+        printf("\nJ'ai rien capté à ce que tu a écrit je supose \nque tu n'a pas osé me dire que tu était tout seul.\n");
+        srand(time(NULL));
+        nombre_mystere = (rand() % (MAX - MIN + 1)) + MIN;
+    }
+    printf("-------------------------------------------------------------\n");
 
     // Boucle continuer la partie
     do {
 
-    // Générateur de nombre aléatoirement
-    srand(time(NULL));
-    nombre_mystere = (rand() % (MAX - MIN + 1)) + MIN;
-
     // Message d'accueil pour indiqué les consignes
-    printf("Consignes = Basique, un nombre est défini entre %d et %d, à toi de le trouver ;)\n\n", MIN, MAX);
+    printf("Consignes = Basique, un nombre est défini entre %d et %d,\n à toi de le trouver ;)\n\n", MIN, MAX);
 
     // Boucle du jeu : Redemande la question.
     do {
@@ -44,7 +70,7 @@ int main(int argc, char *argv[])
     printf("P.S.: Tu a trouver le résultat en %d coups.\n", compteur_coups);
 
     // Demande à l'utilisateur si il veux continuer la partie ?
-    printf("Au fait, Tu veux encore perdre ton temps ? Si oui éctit (1) si non écrit (0) :");
+    printf("Au fait, Tu veux encore perdre ton temps ? Si Oui éctit (1) si Non écrit (0) :");
     scanf("%d", &continuer_partie);
 
     if (continuer_partie)
