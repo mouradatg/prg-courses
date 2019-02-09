@@ -8,8 +8,11 @@ int main(int argc, char *argv[])
     int nombre_mystere_mod2 = 0;
     const int MAX = 100, MIN = 1;
 
+    // Boucle continuer la partie
+    do {
+
     // Menu choix du joueur
-    printf("=== MENU CHOIX JOUEUR ===\n");
+    printf("\n\n=== MENU CHOIX JOUEUR ===\n");
     printf("Salut toi, il est temps de choisir le nombre de joueur !\n");
     printf("1. Je suis seul au monde j'ai pas d'amis mec !\n");
     printf("2. On est 2 je suis là avec une amie ;)\n");
@@ -36,9 +39,6 @@ int main(int argc, char *argv[])
         nombre_mystere = (rand() % (MAX - MIN + 1)) + MIN;
     }
     printf("-------------------------------------------------------------\n");
-
-    // Boucle continuer la partie
-    do {
 
     // Message d'accueil pour indiqué les consignes
     printf("Consignes = Basique, un nombre est défini entre %d et %d,\n à toi de le trouver ;)\n\n", MIN, MAX);
