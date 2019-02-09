@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     // Boucle continuer la partie
     do {
 
+    do {
     // Menu choix du joueur
     printf("=== MENU CHOIX JOUEUR ===\n");
     printf("Salut toi, il est temps de choisir le nombre de joueur !\n");
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
     printf("=============================================================");
     printf("\nTon choix : ");
     scanf("%d", &choix_utilisateur);
+    } while (choix_utilisateur < 1 || choix_utilisateur > 2);
 
     if (choix_utilisateur == 1)
     {
@@ -35,18 +37,19 @@ int main(int argc, char *argv[])
     else
     {
         printf("\nJ'ai rien capté à ce que tu a écrit je supose \nque tu n'a pas osé me dire que tu était tout seul.\n");
-        srand(time(NULL));
-        nombre_mystere = (rand() % (MAX - MIN + 1)) + MIN;
     }
+
     printf("-------------------------------------------------------------\n");
 
     // Menu choix de difficulté
+    do {
     printf("J'ai pas fini de te casser les bonbons,\nMaintenant choisi ton niveau de difficulté.\n");
     printf("1. Le nombre sera entre 1 et 100\n");
     printf("2. Le nombre sera entre 1 et 1 000\n");
     printf("3. Le nombre sera entre 1 et 10 000\n");
     printf("Ton choix : ");
     scanf("%d", &choix_niveau);
+    } while (choix_niveau < 1 || choix_niveau > 3);
     printf("-------------------------------------------------------------\n");
     switch(choix_niveau)
     {
@@ -98,8 +101,10 @@ int main(int argc, char *argv[])
     printf("P.S.: Tu a trouver le résultat en %d coups.\n", compteur_coups);
 
     // Demande à l'utilisateur si il veux continuer la partie ?
+    do {
     printf("Au fait, Tu veux encore perdre ton temps ? Si Oui éctit (1) si Non écrit (0) :");
     scanf("%d", &continuer_partie);
+    } while (continuer_partie < 0 || continuer_partie > 1);
 
     if (continuer_partie)
     {
