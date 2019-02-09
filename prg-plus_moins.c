@@ -5,14 +5,14 @@
 int main(int argc, char *argv[])
 {
     int nombre_mystere = 0, nombre_utilisateur = 0, compteur_coups = 0, continuer_partie = 1, choix_utilisateur = 0;
-    int nombre_mystere_mod2 = 0;
-    const int MAX = 100, MIN = 1;
+    int choix_niveau = 0;
+    int MAX = 100, MIN = 1;
 
     // Boucle continuer la partie
     do {
 
     // Menu choix du joueur
-    printf("\n\n=== MENU CHOIX JOUEUR ===\n");
+    printf("=== MENU CHOIX JOUEUR ===\n");
     printf("Salut toi, il est temps de choisir le nombre de joueur !\n");
     printf("1. Je suis seul au monde j'ai pas d'amis mec !\n");
     printf("2. On est 2 je suis là avec une amie ;)\n");
@@ -40,8 +40,36 @@ int main(int argc, char *argv[])
     }
     printf("-------------------------------------------------------------\n");
 
+    // Menu choix de difficulté
+    printf("J'ai pas fini de te casser les bonbons,\nMaintenant choisi ton niveau de difficulté.\n");
+    printf("1. Le nombre sera entre 1 et 100\n");
+    printf("2. Le nombre sera entre 1 et 1 000\n");
+    printf("3. Le nombre sera entre 1 et 10 000\n");
+    printf("Ton choix : ");
+    scanf("%d", &choix_niveau);
+    printf("-------------------------------------------------------------\n");
+    switch(choix_niveau)
+    {
+    case 1:
+        MAX = 100;
+    break;
+    case 2:
+        MAX = 1000;
+    break;
+    case 3:
+        MAX = 10000;
+    break;
+    default:
+        MAX = 100;
+    break;
+    }
+
+    if (choix_utilisateur != 2)
+    {
     // Message d'accueil pour indiqué les consignes
     printf("Consignes = Basique, un nombre est défini entre %d et %d,\n à toi de le trouver ;)\n\n", MIN, MAX);
+    }
+
 
     // Boucle du jeu : Redemande la question.
     do {
@@ -75,7 +103,7 @@ int main(int argc, char *argv[])
 
     if (continuer_partie)
     {
-        printf("\nC'est repartie, on est des fou !! /D");
+        printf("\nC'est repartie, on est des fou !! /D\n\n");
     }
     else
     {
